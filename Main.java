@@ -5,12 +5,12 @@ class Main {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите строку с арифметическим выражением между двумя числами:");
         String line = in.nextLine();
-        int result = calc(line);
+        String result = calc(line);
         System.out.println("Результат вычислений: ");
         System.out.println(result);
     }
 
-    public static int calc(String input) throws IllegalArgumentException, ArithmeticException {
+    public static String calc(String input) throws IllegalArgumentException, ArithmeticException {
         String[] words = input.split(" ");
         String sortedstring = splitString(words);
         String[] elements = deleteSpaceElem(sortedstring);
@@ -91,7 +91,7 @@ class Main {
         return builder3.toString();
     }
 
-    public static int countResult(String[] masselem) throws IllegalArgumentException, ArithmeticException {
+    public static String countResult(String[] masselem) throws IllegalArgumentException, ArithmeticException {
         int[] arr_num = new int[5];
         int i = 0;
         for (String s : masselem) {
@@ -117,6 +117,6 @@ class Main {
                     }
             }
         }
-        return arr_num[0];
+        return Integer.toString(arr_num[0]);
     }
 }
